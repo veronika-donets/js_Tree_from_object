@@ -24,4 +24,4 @@ let data = {
 ````
 **Result**
 
-- [DEMO LINK](https://veronika-donets.github.io/js_Tree_from_object/)
+- [DEMO LINK](https://veronika-donets.github.io/js_tree_from_object/index.html)

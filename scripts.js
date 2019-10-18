@@ -19,11 +19,15 @@ let data = {
 
 function makeList(data) {
   const list = document.createElement('ul');
+
   for (let key in data) {
+    if (Object.keys(key).length === 0) {
+      return;
+    }
     let item = document.createElement('li');
     item.textContent = `${key}`;
 
-    if (data[key] && typeof data[key] === 'object') {
+    if (typeof data[key] === 'object') {
       item.append(makeList(data[key]));
     }
     list.append(item);

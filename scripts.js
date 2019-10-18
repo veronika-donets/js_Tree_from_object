@@ -23,7 +23,7 @@ function makeList(data) {
     let item = document.createElement('li');
     item.textContent = `${key}`;
 
-    if (typeof data[key] === 'object' && data[key] !== null) {
+    if (data[key] && typeof data[key] === 'object') {
       item.append(makeList(data[key]));
     }
     list.append(item);

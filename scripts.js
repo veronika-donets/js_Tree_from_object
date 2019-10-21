@@ -1,4 +1,4 @@
-let data = {
+const data = {
   "Fish": {
     "trout": {},
     "salmon": {}
@@ -18,20 +18,18 @@ let data = {
 
 const container = document.getElementById('container');
 
-function makeList(data) {
+function makeList(obj) {
 
   const list = document.createElement('ul');
 
-  if (Object.keys(data).length === 0) {
-    return;
-  }
+  if (Object.keys(obj).length === 0) { return; }
 
-  for (let key in data) {
+  for (let key in obj) {
     let item = document.createElement('li');
     item.textContent = key;
 
-    if (makeList(data[key])) {
-      item.append(makeList(data[key]));
+    if (makeList(obj[key])) {
+      item.append(makeList(obj[key]));
     }
     list.append(item);
   }
